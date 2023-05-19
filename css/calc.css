@@ -1,64 +1,107 @@
-body {
-    background-color: beige;
+/* Иконки */
+select {
+  background-image: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-512.png');
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 15px;
+  padding-right: 20px;
+  border: none;
+  border-bottom: 1px solid #888;
+  font-size: 16px;
+  color: #555;
+  appearance: none;
+  -webkit-appearance: none;
   }
   
+  input[type="text"] {
+  background-image: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-compose-512.png');
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 15px;
+  padding-right: 20px;
+  border: none;
+  border-bottom: 1px solid #888;
+  font-size: 16px;
+  color: #555;
+  }
+  
+  /* Центрирование */
+  #container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  #calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  }
+  
+  /* Остальные стили */
   h1 {
-    text-align: center;
+  text-align: center;
   }
   
   p {
-    padding-left: 5px;
+  padding-left: 5px;
   }
   
   #container {
-    height: 500px;
-    width: 360px;
-    margin: 50px auto;
-    background: #ADD8E6;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-    border-radius: 3px;
+  height: 500px;
+  width: 360px;
+  margin: 50px auto;
+  background: #ADD8E6;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
   }
   
   button {
-    text-transform: uppercase;
-    font-weight: bold;
-    display: block;
-    margin: 30px auto;
-    background: #ad133a;
-    border-radius: 5px;
-    width: 200px;
-    height: 50px;
-    font-size: 17px;
-    color: #ADD8E6;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  margin: 30px auto;
+  background: #ad133a;
+  border-radius: 5px;
+  width: 200px;
+  height: 50px;
+  font-size: 17px;
+  color: #ADD8E6;
   }
   
   button:hover {
-    background: #4c2827;
-    border-bottom-color: #111;
+  background: #4c2827;
+  border-bottom-color: #111;
   }
   
   #investyield {
-    font-size: 30px;
-    margin-top: 5px;
-    text-align: center;
+  font-size: 30px;
+  margin-top: 5px;
+  text-align: center;
   }
   
   #investyield:before {
-    content: "";
-    font-size: 20px;
-    font-weight: bold;
-    display: block;
-    text-transform: uppercase;
+  content: "";
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  text-transform: uppercase;
   }
   
   #investyield sup {
-    font-size: 20px;
-    top: -18px;
+  font-size: 20px;
+  top: -18px;
   }
   
   #investyield yield {
-    font-size: 20px;
-    font-weight: bold;
-    display: block;
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
   }
+  
+  
+  
+  
   
