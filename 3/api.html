@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hh.ru</title>
+</head>
+<body>
+  <h1>Вакансии</h1>
+
+  <div>
+    <input type="text" id="keywords" placeholder="Keywords">
+    <button onclick="searchVacancies()">Search</button>
+  </div>
+
+  <div id="vacancies"></div>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    // Функция для получения результатов поиска вакансий
+    function searchVacancies() {
+      const keywordsInput = document.getElementById('keywords');
+      const keywords = keywordsInput.value;
+
+      // API URL для поиска вакансий на HH.ru
+      const apiUrl = 'https://api.hh.ru/vacancies';
+
+      // Параметры поиска
+      const params = {
+        text: keywords, // Текст запроса
+        area: 1, // Код региона (1 - Москва)
+      };
+
+      // Отправка GET-запроса на API HH.ru
+      axios.get(apiUrl, { params })
+        .then(response => {
+          const vacancies = response.data.items; // Результаты поиска вакансий
+
+          // Отображение результатов на странице
+          const vacanciesElement = document.getElementById('vacancies');
+          vacanciesElement.innerHTML = '';
+
+          if (vacancies.length === 0) {
+            vacanciesElement.innerHTML = 'No vacancies found.';
+          } else {
+            vacancies.forEach(vacancy => {
+              const vacancyElement = document.createElement('div');
+              vacancyElement.innerHTML = `
+                <h3>${vacancy.name}</h3>
+                <p>${vacancy.employer.name}</p>
+                <p>${vacancy.snippet.responsibility}</p>
+                <hr>
+              `;
+              vacanciesElement.appendChild(vacancyElement);
+            });
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+  </script>
+</body>
+</html>
